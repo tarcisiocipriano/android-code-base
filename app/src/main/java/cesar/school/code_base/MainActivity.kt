@@ -1,5 +1,6 @@
 package cesar.school.code_base
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -16,6 +17,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonViewBinding.setOnClickListener {
             Toast.makeText(this, this.getString(R.string.button_view_binding_working), Toast.LENGTH_SHORT).show()
+        }
+
+        binding.buttonOpenActivity.setOnClickListener {
+            val simpleActivity = Intent(this, SimpleActivity::class.java)
+            startActivity(simpleActivity)
         }
     }
 }

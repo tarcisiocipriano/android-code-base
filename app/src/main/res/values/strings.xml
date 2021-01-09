@@ -3,4 +3,6 @@
     <string name="welcome_text">Hello World</string>
     <string name="button_view_binding">View Binding Test</string>
     <string name="button_view_binding_working">View Binding test working</string>
+    <string name="button_open_activity">Open Activity</string>
+    <string name="worked">It works!</string>
 </resources>

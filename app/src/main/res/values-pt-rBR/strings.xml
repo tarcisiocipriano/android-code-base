@@ -4,4 +4,6 @@
     <string name="welcome_text">Olá Mundo</string>
     <string name="button_view_binding">Teste de View Binding</string>
     <string name="button_view_binding_working">Teste de View Binding funcionando</string>
+    <string name="button_open_activity">Abrir Activity</string>
+    <string name="worked">Funciona!</string>
 </resources>
