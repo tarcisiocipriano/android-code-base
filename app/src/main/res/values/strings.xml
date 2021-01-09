@@ -5,4 +5,9 @@
     <string name="button_view_binding_working">View Binding test working</string>
     <string name="button_open_activity">Open Activity</string>
     <string name="worked">It works!</string>
+    <string name="button_activity_params">Open</string>
+    <string name="edit_text_username_hint">Name</string>
+    <string name="username_empty">Please fill your name</string>
+    <string name="username_greetings">Hello, %1$s! you opened this Activity with parameters</string>
+    <string name="username_message_empty">Activity with no parameters</string>
 </resources>

@@ -8,6 +8,10 @@ import cesar.school.code_base.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val MAIN_ACTIVITY_NAME_EXTRA_ID = "name"
+    }
+
     private lateinit var binding: ActivityMainBinding // var to later initiate the binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +26,17 @@ class MainActivity : AppCompatActivity() {
         binding.buttonOpenActivity.setOnClickListener {
             val simpleActivity = Intent(this, SimpleActivity::class.java)
             startActivity(simpleActivity)
+        }
+
+        binding.buttonActivityParams.setOnClickListener {
+            val name = binding.editTextUsername.text.toString()
+            if (!name.isNullOrEmpty()) {
+                val simpleActivity = Intent(this, SimpleActivity::class.java)
+                simpleActivity.putExtra(MAIN_ACTIVITY_NAME_EXTRA_ID, name)
+                startActivity(simpleActivity)
+            } else {
+                Toast.makeText(this, getString(R.string.username_empty), Toast.LENGTH_LONG).show()
+            }
         }
     }
 }
