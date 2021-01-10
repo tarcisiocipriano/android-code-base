@@ -16,4 +16,5 @@
     <string name="button_return_result">Return Result</string>
     <string name="no_values_message">Please inform values</string>
     <string name="sum_result">Sum result %1$s</string>
+    <string name="button_increment">Increment state</string>
 </resources>

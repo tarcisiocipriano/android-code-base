@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import cesar.school.code_base.databinding.ActivityMainBinding
 import cesar.school.code_base.model.Car
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         const val MAIN_ACTIVITY_VALUE02_EXTRA_ID = "value02"
         const val MAIN_ACTIVITY_SUM_REQUEST_CODE = 1
         const val MAIN_ACTIVITY_RESULT_EXTRA_ID = ""
+
+        const val TAG = "lifecycle"
+        const val SAVED_INSTANCE_EXTRA_ID = "saved_instance_extra_id"
     }
 
     private lateinit var binding: ActivityMainBinding // var to later initiate the binding
@@ -30,6 +34,20 @@ class MainActivity : AppCompatActivity() {
         // test binding
         binding.buttonViewBinding.setOnClickListener {
             Toast.makeText(this, this.getString(R.string.button_view_binding_working), Toast.LENGTH_SHORT).show()
+        }
+
+        // set the state restored in the view
+        if (savedInstanceState != null) {
+            val saved = savedInstanceState.getString(SAVED_INSTANCE_EXTRA_ID)
+            binding.labelState.text = saved
+            Log.d(TAG, "onCreate not null: $saved")
+        }
+
+        // increment state
+        binding.buttonSetContent.setOnClickListener {
+            var current = binding.labelState.text.toString().toInt()
+            current++
+            binding.labelState.text = current.toString()
         }
 
         // open activity
@@ -81,5 +99,47 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, this.getString(R.string.sum_result, result), Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume()")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart()")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy()")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(SAVED_INSTANCE_EXTRA_ID, this.binding.labelState.text.toString())
+        Log.d(TAG, "onSaveInstanceState()")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val saved = savedInstanceState.getString(SAVED_INSTANCE_EXTRA_ID)
+        Log.d(TAG, "onRestoreInstanceState(): $saved")
     }
 }
