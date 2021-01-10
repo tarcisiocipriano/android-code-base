@@ -18,4 +18,14 @@
     <string name="no_values_message">Por favor informe valores</string>
     <string name="sum_result">Resultado da soma %1$s</string>
     <string name="button_increment">Incrementar estado</string>
+    <string name="button_browser">Navegador</string>
+    <string name="button_share">Compartilhar</string>
+    <string name="button_alarm">Alarme</string>
+    <string name="implicit_intent_browser">Escolha o navegador</string>
+    <string name="implicit_intent_browser_option_not_found">Nenhum navegador encontrado</string>
+    <string name="implicit_intent_share">Conteúdo de texto para compartilhar</string>
+    <string name="implicit_intent_share_option">Compartilhar texto usando</string>
+    <string name="implicit_intent_share_option_not_found">Nenhuma opção para compartilhar</string>
+    <string name="implicit_intent_alarm">Mensagem do alarme</string>
+    <string name="implicit_intent_alarm_option_not_found">Nenhuma opção de alarme encontrada</string>
 </resources>

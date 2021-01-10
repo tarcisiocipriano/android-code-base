@@ -2,8 +2,10 @@ package cesar.school.code_base
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.AlarmClock
 import android.util.Log
 import android.widget.Toast
 import cesar.school.code_base.databinding.ActivityMainBinding
@@ -86,6 +88,45 @@ class MainActivity : AppCompatActivity() {
                 startActivityForResult(resultActivity, MAIN_ACTIVITY_SUM_REQUEST_CODE)
             } else {
                 Toast.makeText(this, this.getString(R.string.no_values_message), Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // implicit intent to open the browser
+        binding.buttonBrowser.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://www.google.com")
+            }
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(Intent.createChooser(intent, getString(R.string.implicit_intent_browser)))
+            } else {
+                Toast.makeText(this, getString(R.string.implicit_intent_browser_option_not_found), Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // implicit intent to share content
+        binding.buttonShare.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, getString(R.string.implicit_intent_share))
+            }
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(Intent.createChooser(intent, getString(R.string.implicit_intent_share_option)));
+            } else {
+                Toast.makeText(this, getString(R.string.implicit_intent_share_option_not_found), Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // implicit intent to set alarms
+        binding.buttonAlarm.setOnClickListener {
+            val intent = Intent(AlarmClock.ACTION_SET_ALARM).apply {
+                putExtra(AlarmClock.EXTRA_MESSAGE, getString(R.string.implicit_intent_alarm))
+                putExtra(AlarmClock.EXTRA_HOUR, 14)
+                putExtra(AlarmClock.EXTRA_MINUTES, 30)
+            }
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, getString(R.string.implicit_intent_alarm_option_not_found),Toast.LENGTH_SHORT).show()
             }
         }
     }
