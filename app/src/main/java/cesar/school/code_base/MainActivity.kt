@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import cesar.school.code_base.databinding.ActivityMainBinding
+import cesar.school.code_base.model.Car
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
         const val MAIN_ACTIVITY_NAME_EXTRA_ID = "name"
+        const val MAIN_Activity_CAR_EXTRA_ID = "car"
     }
 
     private lateinit var binding: ActivityMainBinding // var to later initiate the binding
@@ -37,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, getString(R.string.username_empty), Toast.LENGTH_LONG).show()
             }
+        }
+
+        binding.buttonActivityObject.setOnClickListener {
+            val simpleActivity = Intent(this, SimpleActivity::class.java)
+            simpleActivity.putExtra(MAIN_Activity_CAR_EXTRA_ID, Car("Unão", "Fiat Uno", 2005))
+            startActivity(simpleActivity)
         }
     }
 }

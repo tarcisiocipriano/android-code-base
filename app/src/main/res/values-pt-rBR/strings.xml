@@ -11,4 +11,6 @@
     <string name="username_empty">Por favor preencha seu nome</string>
     <string name="username_greetings">Olá, %1$s! você abriu esta Activity com parâmetros</string>
     <string name="username_message_empty">Activity sem parâmetros</string>
+    <string name="car_greetings">Você tem um %2$s %3$s, chamado %1$s</string>
+    <string name="button_activity_object">Abrir Activity com objeto</string>
 </resources>
