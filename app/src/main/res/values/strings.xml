@@ -27,4 +27,7 @@
     <string name="implicit_intent_share_option_not_found">No options to share</string>
     <string name="implicit_intent_alarm">Alarm message</string>
     <string name="implicit_intent_alarm_option_not_found">No alarm options found</string>
+    <string name="button_listview" translatable="false">Listview</string>
+    <string name="button_remove">Remove</string>
+    <string name="button_insert">Insert</string>
 </resources>

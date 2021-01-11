@@ -3,6 +3,7 @@
     package="cesar.school.code_base">
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Code_base">
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ListviewDetailsActivity"></activity>
+        <activity android:name=".ListviewActivity" />
+        <activity android:name=".ResultActivity" />
         <activity android:name=".SimpleActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

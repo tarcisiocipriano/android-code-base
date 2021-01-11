@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="photos">
+        <item>@drawable/tarcisio</item>
+        <item>@drawable/daivid</item>
+        <item>@drawable/giulia</item>
+        <item>@drawable/gabriel</item>
+    </array>
+</resources>

@@ -28,4 +28,6 @@
     <string name="implicit_intent_share_option_not_found">Nenhuma opção para compartilhar</string>
     <string name="implicit_intent_alarm">Mensagem do alarme</string>
     <string name="implicit_intent_alarm_option_not_found">Nenhuma opção de alarme encontrada</string>
+    <string name="button_remove">Remover</string>
+    <string name="button_insert">Inserir</string>
 </resources>

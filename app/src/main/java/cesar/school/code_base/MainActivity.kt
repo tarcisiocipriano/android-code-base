@@ -129,6 +129,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(R.string.implicit_intent_alarm_option_not_found),Toast.LENGTH_SHORT).show()
             }
         }
+
+        // open listview activity
+        binding.buttonListview.setOnClickListener {
+            val listviewActivity = Intent(this, ListviewActivity::class.java)
+            startActivity(listviewActivity)
+        }
     }
 
     // activity result
