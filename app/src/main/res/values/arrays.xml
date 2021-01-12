@@ -6,4 +6,11 @@
         <item>@drawable/giulia</item>
         <item>@drawable/gabriel</item>
     </array>
+    <array name="dog_photos">
+        <item>@drawable/dog0</item>
+        <item>@drawable/dog1</item>
+        <item>@drawable/dog2</item>
+        <item>@drawable/dog3</item>
+        <item>@drawable/dog4</item>
+    </array>
 </resources>

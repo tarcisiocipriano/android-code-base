@@ -30,4 +30,5 @@
     <string name="button_listview" translatable="false">Listview</string>
     <string name="button_remove">Remove</string>
     <string name="button_insert">Insert</string>
+    <string name="button_recyclerview" translatable="false">Recyclerview</string>
 </resources>

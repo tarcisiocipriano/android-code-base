@@ -135,6 +135,12 @@ class MainActivity : AppCompatActivity() {
             val listviewActivity = Intent(this, ListviewActivity::class.java)
             startActivity(listviewActivity)
         }
+
+        // open recyclerview activity
+        binding.buttonRecyclerview.setOnClickListener {
+            val recicleActivity = Intent(this, RecyclerviewActivity::class.java)
+            startActivity(recicleActivity)
+        }
     }
 
     // activity result
